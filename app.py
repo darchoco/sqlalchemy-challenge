@@ -109,6 +109,7 @@ def end(start, end):
         #set date to key, and put min, avg, max as callable list
         for date, min, avg, max in tobs_stats:
                 dict_stats[date] = [min,avg,max]
+        session.close()
         return(jsonify(dict_stats))
 if (__name__ == "__main__"):
    app.run(debug=True)
